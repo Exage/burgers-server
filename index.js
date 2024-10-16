@@ -13,7 +13,7 @@ const PORT = 3000
 
 app.get('/api/products/', (req, res) => {
 
-    fs.readFile('./burgers.json', 'utf8', (err, file) => {
+    fs.readFile(path.join(process.cwd(), 'burgers.json'), 'utf8', (err, file) => {
         if (err) {
             res.status(400).send({ message: err.message })
             return
